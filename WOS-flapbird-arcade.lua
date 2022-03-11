@@ -1,3 +1,4 @@
+--Created by murpyh#3984
 local Screen = GetPartFromPort(1, "Screen")
 local Button = GetPartFromPort(2, "TriggerWire")
 math.randomseed(SandboxRunID)
