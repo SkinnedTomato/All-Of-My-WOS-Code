@@ -555,7 +555,7 @@ speaker:Chat(tostring(screen))
 wait(0.5)
 screen:ClearElements()
 currentPage = 1
-text0 = screen:CreateElement("TextLabel", {Text = "Restart\n<E>", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.15,0.9)})
+text0 = screen:CreateElement("TextLabel", {Text = "Restart\nSystem\n<E>", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.15,0.9)})
 text1 = screen:CreateElement("TextLabel", {Text = "Systems\n<R>", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.4,0.9)})
 text2 = screen:CreateElement("TextLabel", {Text = "Edit...\n<T>", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.625,0.9)})
 text3 = screen:CreateElement("TextLabel", {Text = "Notifs...\n<Y>", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.85,0.9)})
