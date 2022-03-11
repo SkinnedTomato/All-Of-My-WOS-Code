@@ -252,7 +252,9 @@ function pressedKey.R()
         end
 		--speaker:Chat("haha")
 		for i,v in ipairs(listOpt) do
-			local strw = v.Text
+			if(string.gsub(v.Text, "#", "")) then
+				speaker:Chat("this one is tagged at "..i)
+			end
 			detagifyDict[v.Text] = detagify[i]
 		end
 		--speaker:Chat("done")
