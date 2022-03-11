@@ -301,9 +301,9 @@ function pressedKey.R()
 	page.L = function()
 		previousPage = 3
 		route = "R"
-		speaker:Chat(list.whitelist[string.gsub(string.gsub(Selection.Text,"<",""),">","")])
+		--speaker:Chat(list.whitelist[string.gsub(string.gsub(Selection.Text,"<",""),">","")])
 		list.whitelist[string.gsub(string.gsub(Selection.Text,"<",""),">","")] = nil
-		speaker:Chat(list.whitelist[string.gsub(string.gsub(Selection.Text,"<",""),">","")])
+		--speaker:Chat(list.whitelist[string.gsub(string.gsub(Selection.Text,"<",""),">","")])
         Selection:Destroy()
 		Selection = nil
         pressedKey.E()
