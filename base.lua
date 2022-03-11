@@ -235,10 +235,10 @@ function pressedKey.R()
 		local xf = 0
 		local inte = 1
 		editing = true
-		speaker:Chat("loading list")
+		--speaker:Chat("loading list")
 		for k,v in pairs(list.whitelist) do
             if k ~= nil then
-				speaker:Chat(k.." and "..v)
+				--speaker:Chat(k.." and "..v)
 	    	    tate = screen:CreateElement("TextLabel", {Text = k, TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.new(0.5,-125+(af*250),0.5,-230+(xf*30))})
 		        table.insert(listOpt,inte,tate)
 				table.insert(detagify,inte,v)
@@ -250,12 +250,12 @@ function pressedKey.R()
             end
 			inte+=1
         end
-		speaker:Chat("haha")
+		--speaker:Chat("haha")
 		for i,v in ipairs(listOpt) do
 			local strw = v.Text
 			detagifyDict[v.Text] = detagify[i]
 		end
-		speaker:Chat("done")
+		--speaker:Chat("done")
 		text0.Text = "Back\n(II)\n<E>"
 		text1.Text = "Next\nEntry\n<R>"
 		text2.Text = "Previous\nEntry\n<T>"
