@@ -1,3 +1,3 @@
-micro = GetPartFromPort(1, "Microcontroller")
+touch = GetPartFromPort(1, "TouchScreen")
 speaker = GetPartFromPort(2, "Speaker")
-speaker:Chat(tostring(micro:GetMethods()["Communicate"][1]))
+speaker:Chat(tostring(micro:GetMethods()[1]))
