@@ -14,7 +14,6 @@ local route = ""
 local attempts = 0
 local inProgress = false
 local pressedKey = {}
-local systemkeyword = "burger king and fries\n"
 local loaded = false
 local editing = false
 local list = {["notif"] = {
@@ -77,6 +76,7 @@ local list = {["notif"] = {
 	["Polysilicon"] =  106.75;
 	["Glass"] =  107
 }
+["systemkeyword"] = "burger king and fries\n"
 }
 local detagify = {}
 local detagifyDict = {}
@@ -141,7 +141,7 @@ function password()
 	text1.Text = ""
 	text2.Text = ""
 	text3.Text = ""
-	text4.Text = "Please type the system \n keyword into the keyboard \n (not your keyboard)"
+	text4.Text = "Please type the system \n keyphrase into the keyboard \n (not your keyboard)"
 	dadare = screen:CreateElement("TextLabel", {Text = "", TextSize = 15, TextColor3 = Color3.new(51,51,51), BackgroundColor3 = Color3.new(255,255,255), Size = UDim2.new(0, 0, 0, 0), Position = UDim2.fromScale(0.5,0.9)})
 	for i = 1,240 do
 		if correctpassword == true then
@@ -536,7 +536,7 @@ keyboard:Connect("TextInputted", function(text, player)
 	end
 	if waitingpassword == true then
 		--speaker:Chat("testing pass "..text)
-		if text == systemkeyword then
+		if text == list["systemkeyword"] then
 			--speaker:Chat("pass accepted")
 			correctpassword = true
 		else
