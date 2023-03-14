@@ -75,8 +75,8 @@ local list = {["notif"] = {
 	["TriggerWire"] =  106.5;
 	["Polysilicon"] =  106.75;
 	["Glass"] =  107
-}
-["systemkeyword"] = "burger king and fries\n",
+};
+["systemkeyword"] = "burger king and fries\n"
 }
 local detagify = {}
 local detagifyDict = {}
