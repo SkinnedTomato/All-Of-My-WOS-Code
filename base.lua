@@ -76,7 +76,7 @@ local list = {["notif"] = {
 	["Polysilicon"] =  106.75;
 	["Glass"] =  107
 }
-["systemkeyword"] = "burger king and fries\n"
+["systemkeyword"] = "burger king and fries\n",
 }
 local detagify = {}
 local detagifyDict = {}
@@ -525,7 +525,6 @@ pagesMain = {
 	["6"] = pressedKey.R()[page.C];
 	["7"] = pressedKey.Y()[page.B];
 }
-
 ]]--
 
 
