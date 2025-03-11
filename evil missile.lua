@@ -5,7 +5,7 @@ local switch = GetPartFromPort(GetPort(1), "Switch")
 
 local targetWhitelist = {["a"] = true, ["HitScoredanceMan"] = true, ["michaelosei"] = true, ["Gustavo12345687890"] = true}
 
-local target = "altaltgoku0987654321"
+local target = ""
 
 local str = target.." Max2147483647"
 
