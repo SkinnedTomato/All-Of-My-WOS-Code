@@ -47,8 +47,8 @@ local velIterator = 1
 local speedIterator = 1
 local init = true
 local lastFiredImpulse = tick()
-local previousPos instrument:GetReading(6)
-local currentPos = instrument:GetReading(6)
+local previousPos instrument:GetReading("Position")
+local currentPos = instrument:GetReading("Position")
 local flying = false
 local targetFoundIterator = 1
 
@@ -125,8 +125,8 @@ while true do
         if k == target then
             targetFoundIterator = 1
             previousPos = currentPos
-            currentPos = instrument:GetReading(6)
-            speeds[speedIterator] = instrument:GetReading(0)
+            currentPos = instrument:GetReading("Position")
+            speeds[speedIterator] = instrument:GetReading("Speed")
             speedIterator = iteratorAdd(speedIterator, 1, 15)
             --print(arrayAverage(speeds))
             velocities[velIterator] = currentPos-previousPos
@@ -153,7 +153,7 @@ while true do
             for i = 1,5 do
                 timeForMissile = (guessedPosition-currentPos).Magnitude/getTrustedSpeed()
                 if impulseMode then
-                    guessedPosition = v+((targetVelocity-arrayAverage(velocities)).Unit*instrument:GetReading(0)*timeForMissile) + ((arrayAverage(accReadings[1])+Vector3.new(0,gravity,0))*timeForMissile)
+                    guessedPosition = v+((targetVelocity-arrayAverage(velocities)).Unit*instrument:GetReading("Speed")*timeForMissile) + ((arrayAverage(accReadings[1])+Vector3.new(0,gravity,0))*timeForMissile)
                 else
                     guessedPosition = v+targetVelocity*timeForMissile+(arrayAverage(accReadings[1])*timeForMissile)
                 end
