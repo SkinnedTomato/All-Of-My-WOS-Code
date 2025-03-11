@@ -3,9 +3,9 @@ local instrument = GetPartFromPort(GetPort(1), "Instrument")
 local gyro = GetPartFromPort(GetPort(1), "Gyro")
 local switch = GetPartFromPort(GetPort(1), "Switch")
 
-local targetWhitelist = {["a"] = true, ["HitScoredanceMan"] = true, ["michaelosei"] = true, ["altaltgoku0987654321"] = true, ["Gustavo12345687890"] = true}
+local targetWhitelist = {["a"] = true, ["HitScoredanceMan"] = true, ["michaelosei"] = true, ["Gustavo12345687890"] = true}
 
-local target = ""
+local target = "altaltgoku0987654321"
 
 local str = target.." Max2147483647"
 
