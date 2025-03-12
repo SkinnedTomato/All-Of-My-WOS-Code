@@ -5,7 +5,7 @@ local switch = GetPartFromPort(GetPort(1), "Switch")
 
 local targetWhitelist = {["a"] = true, ["HitScoredanceMan"] = true, ["michaelosei"] = true, ["Gustavo12345687890"] = true}
 
-local target = ""
+local target = "a"
 
 local str = target.." Max2147483647"
 
@@ -219,6 +219,7 @@ while true do
                     master = 1
                 end
                 if master>5 then
+                    switch:Configure({["SwitchValue"] = false})
                     TriggerPort(2)
                 end
                 beepiterator = 0
