@@ -9,7 +9,7 @@ local target = ""
 
 local str = target.." Max2147483647"
 
-local sampleSize = 60
+local sampleSize = 30
 
 local posReadings = {table.create(sampleSize, Vector3.new(0,0,0)), 1}
 local speedReadings = {table.create(sampleSize, Vector3.new(0,0,0)), 1}
@@ -170,6 +170,7 @@ while true do
             deltaPitbull[2] = iteratorAdd(deltaPitbull[2], 1, sampleSize)
             if arrayAverage(deltaPitbull[1]) < 0 then
                 --print("Target is going faster than me")
+                print(arrayAverage(deltaPitbull[1]))
                 outrunIterator += 1
             else
                 outrunIterator = 1
