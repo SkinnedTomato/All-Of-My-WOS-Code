@@ -32,7 +32,7 @@ local impulseMode = false
 
 local pitchScale = 300
 local pitchOffset = 15
-local speedScale = 0.25
+local speedScale = 0.125
 local speedOffset = 15
 local maxPitch = 5
 local minPitch = 0.5
