@@ -188,6 +188,7 @@ while true do
             end
             if ((arrayAverage(velocities).Unit) + (guessedPosition-currentPos).Unit).Magnitude < 1 then
                 print("I'm moving away from the target!")
+                gyro:Configure({["Seek"] = str})
             end
             --if (currentPos-v).Magnitude > 100 then
             if tostring((guessedPosition-currentPos).Unit.X) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Y) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Z) == tostring(0/0) then
