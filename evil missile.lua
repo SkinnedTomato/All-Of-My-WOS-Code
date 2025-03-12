@@ -170,7 +170,6 @@ while true do
             deltaPitbull[2] = iteratorAdd(deltaPitbull[2], 1, sampleSize)
             if arrayAverage(deltaPitbull[1]) < 0 then
                 --print("Target is going faster than me")
-                print(arrayAverage(deltaPitbull[1]))
                 outrunIterator += 1
             else
                 outrunIterator = 1
@@ -179,18 +178,20 @@ while true do
                 impulseMode = false
             end
             if outrunIterator > 25 then
-                print("Target is going faster than me")
+                print("Time to target is trending towards infinity! Readings: impact in "..tostring(arrayAverage(pitbull[1])).." ; target speed is "..tostring(arrayAverage(speedReadings[1])).." ; my speed is "..tostring(arrayAverage(speeds)))
+                --[[
                 switch:Configure({["SwitchValue"] = false})
                 flying = false
                 --task.delay(0.875, function() missileSpeed+=1500 end)
                 impulseMode = true
+                ]]--
             end
             if ((arrayAverage(velocities).Unit) + (guessedPosition-currentPos).Unit).Magnitude < 1 then
                 print("I'm moving away from the target!")
             end
             --if (currentPos-v).Magnitude > 100 then
             if tostring((guessedPosition-currentPos).Unit.X) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Y) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Z) == tostring(0/0) then
-                print("Trying to point at NaN...!!!")
+                print("Trying to point at NaN!!!")
                 gyro:Configure({["Seek"] = str})
             else
                 gyro:PointAt(guessedPosition)
