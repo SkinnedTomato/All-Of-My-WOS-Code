@@ -178,7 +178,7 @@ while true do
                 impulseMode = false
             end
             if outrunIterator > 25 then
-                print("Time to target is trending towards infinity! Readings: impact in "..tostring(arrayAverage(pitbull[1])).." ; target speed is "..tostring(arrayAverage(speedReadings[1])).." ; my speed is "..tostring(arrayAverage(speeds)))
+                print("Time to target is trending towards infinity! Readings: impact in "..tostring(arrayAverage(pitbull[1])).." ; target speed is "..tostring(arrayAverage(speedReadings[1]).Magnitude).." ; my speed is "..tostring(arrayAverage(speeds)))
                 --[[
                 switch:Configure({["SwitchValue"] = false})
                 flying = false
