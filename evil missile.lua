@@ -2,6 +2,7 @@ local lifeSensor = GetPartFromPort(GetPort(1), "LifeSensor")
 local instrument = GetPartFromPort(GetPort(1), "Instrument")
 local gyro = GetPartFromPort(GetPort(1), "Gyro")
 local switch = GetPartFromPort(GetPort(1), "Switch")
+local thrusters = GetPartsFromPort(GetPort(1), "Thruster")
 
 local targetWhitelist = {["a"] = true, ["HitScoredanceMan"] = true, ["michaelosei"] = true, ["Gustavo12345687890"] = true}
 
@@ -179,6 +180,7 @@ while true do
             end
             if outrunIterator > 25 then
                 print("Time to target is trending towards infinity! Readings: impact in "..tostring(arrayAverage(pitbull[1])).." ; target speed is "..tostring(arrayAverage(speedReadings[1]).Magnitude).." ; my speed is "..tostring(arrayAverage(speeds)))
+                thrusters:Configure({["Propulsion"]} = 0)
                 --[[
                 switch:Configure({["SwitchValue"] = false})
                 flying = false
@@ -189,12 +191,14 @@ while true do
             if ((arrayAverage(velocities).Unit) + (guessedPosition-currentPos).Unit).Magnitude < 1 then
                 print("I'm moving away from the target!")
                 gyro:Configure({["Seek"] = str})
+                thrusters:Configure({["Propulsion"]} = 100)
             end
             --if (currentPos-v).Magnitude > 100 then
             if tostring((guessedPosition-currentPos).Unit.X) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Y) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Z) == tostring(0/0) then
                 print("Trying to point at NaN!!!")
                 gyro:Configure({["Seek"] = str})
             else
+                thrusters:Configure({["Propulsion"]} = 100)
                 gyro:PointAt(guessedPosition)
             end
              --gyro:PointAt(guessedPosition)
