@@ -180,7 +180,9 @@ while true do
             end
             if outrunIterator > 25 then
                 print("Time to target is trending towards infinity! Readings: impact in "..tostring(arrayAverage(pitbull[1])).." ; target speed is "..tostring(arrayAverage(speedReadings[1]).Magnitude).." ; my speed is "..tostring(arrayAverage(speeds)))
-                thrusters:Configure({["Propulsion"] = 0})
+                for i,v in ipairs(thrusters) do
+                    v:Configure({["Propulsion"] = 0})
+                end
                 --[[
                 switch:Configure({["SwitchValue"] = false})
                 flying = false
@@ -191,14 +193,18 @@ while true do
             if ((arrayAverage(velocities).Unit) + (guessedPosition-currentPos).Unit).Magnitude < 1 then
                 print("I'm moving away from the target!")
                 gyro:Configure({["Seek"] = str})
-                thrusters:Configure({["Propulsion"] = 100})
+                for i,v in ipairs(thrusters) do
+                    v:Configure({["Propulsion"] = 100})
+                end
             end
             --if (currentPos-v).Magnitude > 100 then
             if tostring((guessedPosition-currentPos).Unit.X) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Y) == tostring(0/0) or tostring((guessedPosition-currentPos).Unit.Z) == tostring(0/0) then
                 print("Trying to point at NaN!!!")
                 gyro:Configure({["Seek"] = str})
             else
-                thrusters:Configure({["Propulsion"] = 100})
+                for i,v in ipairs(thrusters) do
+                    v:Configure({["Propulsion"] = 100})
+                end
                 gyro:PointAt(guessedPosition)
             end
              --gyro:PointAt(guessedPosition)
