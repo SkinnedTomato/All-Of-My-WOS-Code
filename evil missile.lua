@@ -108,6 +108,7 @@ while true do
             flying = true
         elseif target == "a" and not targetWhitelist[k] then
             target = k
+            str = target.." Max2147483647"
             GetPartFromPort(GetPort(1), "Anchor"):Configure({["Anchored"] = false})
             posReadings = {table.create(sampleSize, v), 1}
             speedReadings = {table.create(sampleSize, Vector3.new(0,0,0)), 1}
@@ -119,6 +120,7 @@ while true do
             if target == k then
                 target = "a"
                 switch:Configure({["SwitchValue"] = false})
+                str = target.." Max2147483647"
                 GetPartFromPort(GetPort(1), "Anchor"):Configure({["Anchored"] = true})
                 flying = false
             end
